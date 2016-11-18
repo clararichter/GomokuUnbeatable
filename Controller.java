@@ -1,14 +1,17 @@
 public class Controller {
    
-/** Skapar en spelplan med två spelare. Genomför en spelomgång
+/* 
+Instantiates a PlayBoard object and two players. 
+Executes a match.
 */
    public static void main(String[] args) {
       
-      int nbr_rows = 3;
+      //determines the size of the board
+      int nbr_rows = 5;
       
       PlayBoard board = new PlayBoard(nbr_rows);
       Player playerX = new Player("Human", 'X');
-      ComputerPlayer playerO = new ComputerPlayer("Unbeatable Computer", 'O');
+      ComputerPlayer playerO = new ComputerPlayer("Intelligent Computer", 'O');
       
       Player current = playerO;
       
@@ -36,7 +39,7 @@ public class Controller {
             current.makeMove(board); 
          }
 
-         
+       
       }
       while (!board.playerWin(current.getTecken()) && !board.draw());
       

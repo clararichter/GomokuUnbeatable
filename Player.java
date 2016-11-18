@@ -4,15 +4,13 @@ import java.util.Scanner;
 public class Player {
    private String name;
    private Scanner scan;
-   private char tecken;
+   private char token;
 
-/** Skapar en spelare med namnet name
-*/
-   public Player(String name, char tecken) {
+   public Player(String name, char token) {
       
       scan = new Scanner(System.in);
       this.name = name;
-      this.tecken = tecken;
+      this.token = token;
    
    }
    
@@ -20,18 +18,17 @@ public class Player {
       return name;
    }
    public char getTecken() {
-      return tecken;
+      return token;
    }
 
 
-   
-
-/** Gör ett drag från spelplanen board. Läses från tangentbordet
-*/
+   /* 
+   Makes a move on the playboard board, read from keyboard.
+   */
    public void makeMove(PlayBoard board) {
       int row = scan.nextInt();
       int column = scan.nextInt();
-      board.setTecken(row, column, tecken);
+      board.setTecken(row, column, token);
    }
 
 }
